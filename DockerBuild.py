@@ -2,6 +2,12 @@ import sublime, sublime_plugin
 import os
 
 def isDockerMissing():
+    """ Check is Docker daemon is running:
+          We assume that the path to the daemon which appears in full ps output
+          is of the form */bin/docker
+    """
+    if len(os.popen("ps -aef | grep '/bin/docker ' | grep -v grep").read().strip()) < 1:
+        return True
     return False
 
 def isUnsupportedFileType(file_name):
@@ -70,7 +76,8 @@ class DockerBuildCommand(sublime_plugin.WindowCommand):
         getView().window().run_command("exec", {
             'shell': True,
             'cmd': command,
-            'working_dir' : self.file_dir
+            'working_dir' : self.file_dir,
+            'file_regex' : '^[ ]*File "(...*?)", line ([0-9]+)'
         })
 
     
