@@ -8,7 +8,6 @@ def isDockerRunning():
     """
     if len(os.popen("ps -aef | grep '/bin/docker ' | grep -v grep").read().strip()) < 1:
         return False
-    return False
     return True
 
 def isUnsupportedFileType(file_name):
@@ -46,11 +45,12 @@ class DockerBuildCommand(sublime_plugin.WindowCommand):
     docker_image_tag = "2.7"
     docker_image_exe = "python"
 
-    def run(self, type="RUN", docker_image="python", docker_image_tag="2.7", docker_image_exe="python"):
+    def run(self, type="RUN", docker_image="python", docker_image_tag="2.7", docker_image_exe="python", file_regex=''):
         self.type = type
         self.docker_image = docker_image
         self.docker_image_tag = docker_image_tag
         self.docker_image_exe = docker_image_exe
+        self.file_regex = file_regex
         self.file_name = getFileName()
         self.file_dir = getFileDir()
         
@@ -83,7 +83,7 @@ class DockerBuildCommand(sublime_plugin.WindowCommand):
             'shell': True,
             'cmd': command,
             'working_dir' : self.file_dir,
-            'file_regex' : '^[ ]*File "(...*?)", line ([0-9]+)'
+            'file_regex'  : self.file_regex
         })
 
     
