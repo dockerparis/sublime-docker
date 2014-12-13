@@ -1,0 +1,11 @@
+{
+    "target": "docker_build",
+    "type": "RUN",
+    "selector": "source.gcc",
+    "file_regex": "^[ ]*File \"(...*?)\", line ([0-9]+)",
+    "docker_image": "gcc",
+    "docker_image_tag": "latest",
+    "docker_image_exe": "gcc",
+
+}
+
