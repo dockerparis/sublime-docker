@@ -42,10 +42,10 @@ class DockerBuildCommand(sublime_plugin.WindowCommand):
 
     type = "RUN"
     docker_image = "python"
-    docker_image_tag = "2.7"
+    docker_image_tag = "2.7xx" # Value seems to be unused?
     docker_image_exe = "python"
 
-    def run(self, type="RUN", docker_image="python", docker_image_tag="2.7", docker_image_exe="python", file_regex=''):
+    def run(self, type="RUN", docker_image="python", docker_image_tag="2.7", docker_image_exe="python", file_regex='UNSET'):
         self.type = type
         self.docker_image = docker_image
         self.docker_image_tag = docker_image_tag
