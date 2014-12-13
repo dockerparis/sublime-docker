@@ -9,8 +9,8 @@
 
     "variants": [
 
-        { "name": "Ruby v1.3 in Docker Container",
-            "docker_image_tag": "1.3"
+        { "name": "Ruby v1.9.3 in Docker Container",
+            "docker_image_tag": "1.9.3"
         },
 
         { "name": "Ruby v2.1 in Docker Container",
