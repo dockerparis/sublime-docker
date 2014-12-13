@@ -1,0 +1,21 @@
+{
+    "target": "docker_build",
+    "type": "RUN",
+    "selector": "source.rails",
+    "file_regex": "^[ ]*File \"(...*?)\", line ([0-9]+)",
+    "docker_image": "rails",
+    "docker_image_tag": "latest",
+    "docker_image_exe": "rails",
+
+    "variants": [
+
+        { "name": "Rails v4 in Docker Container",
+            "docker_image_tag": "4"
+        },
+
+        { "name": "Rails v4.1 in Docker Container",
+            "docker_image_tag": "4.1"
+        },
+    ]
+}
+
