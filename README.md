@@ -15,4 +15,8 @@ Install using [http://wbond.net/sublime_packages/package_control](SublimeText Pa
 
 After installing, you will find a new options in `Tools > Build system` of your Sublime menu: **Python in Docker Container**.
 
+![alt text](http://mjbright.github.io/2014-Dec_DockerHackathonParis/images/BuildSystems_SubMenu.PNG "Build System Menu")
+
+
 Remember, always you can launch the selected build with `Control+B` (Linux/Windows) or `Command+B` (OS X).
+
