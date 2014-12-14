@@ -1,8 +1,7 @@
 {
     "target": "docker_build",
     "type": "RUN",
-    "selector": "source.pl",
-    "file_regex": "^[ ]*File \"(...*?)\", line ([0-9]+)",
+    "selector": "source.perl",
     "docker_image": "perl",
     "docker_image_tag": "latest",
     "docker_image_exe": "perl",
