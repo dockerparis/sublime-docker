@@ -1,0 +1,24 @@
+{
+    "target": "docker_build",
+    "type": "RUN",
+    "selector": "source.java",
+    "file_regex": "^[ ]*File \"(...*?)\", line ([0-9]+)",
+    "docker_image": "java",
+    "docker_image_tag": "latest",
+    "docker_image_exe": "javac",
+
+    "variants": [
+
+        { "name": "Java v1.7.0_65 in Docker Container",
+            "docker_image_tag": "latest"
+        },
+
+        { "name": "[TODO] Android SDK in Docker Container",
+            "docker_image": "android-sdk-TODO",
+            "docker_image_tag": "latest",
+            "docker_image_exe": "javac"
+        },
+
+    ]
+}
+
