@@ -1,0 +1,21 @@
+{
+    "cmd": ["docker", "build", "$file_path"],
+    "selector": "source.dockerfile",
+    "variants": [
+        { "name": "Docker build",
+            "cmd": ["docker", "build", "$file_path"]
+        },
+        { "name": "Docker create",
+            "cmd": ["docker", "create", "$file_path"]
+        },
+        { "name": "Docker run foreground non interactive",
+            "cmd": ["docker", "create", "$file_path"]
+        },
+        { "name": "Python run foreground interactive",
+            "cmd": ["docker", "create", "$file_path"]
+        },
+        { "name": "Docker run background",
+            "cmd": ["docker", "create", "$file_path"]
+        }
+    ]
+}
