@@ -13,7 +13,7 @@
             "docker_image_tag": "1.9.3"
         },
 
-        { "name": "Ruby v2.1 in Docker Container",
+        { "name": "Ruby v2.1.5 in Docker Container",
             "docker_image_tag": "2.1"
         },
     ]
