@@ -1,0 +1,7 @@
+
+(def hello (fn [] "Hello world"))
+(hello)
+
+(def helloversion (fn [] (clojure.string/join " " ["Hello world", *clojure-version*]))
+(helloversion)
+
