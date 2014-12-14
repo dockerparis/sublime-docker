@@ -71,9 +71,10 @@ class DockerBuildCommand(sublime_plugin.WindowCommand):
         if self.type == "RUN":
             opt_volume =  " -v " + self.file_dir+"/:/src"
             opt_temporary = " -t"
+            opt_cleanup = " --rm"
             image = " " + self.docker_image + ":" + self.docker_image_tag
             build_cmd =  " " + self.docker_image_exe + " /src/"+self.file_name
-            command = ["docker run" + opt_volume + opt_temporary + image + build_cmd]
+            command = ["docker run" + opt_volume + opt_temporary + opt_cleanup + image + build_cmd]
         else:
             self.errorMessage("Unknown command: " + self.type)
             return
