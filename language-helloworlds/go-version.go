@@ -8,3 +8,4 @@ import (
 func main() {
 	fmt.Printf("Hello world from Go - " + runtime.Version() + "\n")
 }
+
