@@ -2,7 +2,5 @@
 
 import sys
 
-
-
 print("Hello World - from Python " + sys.version)
 
