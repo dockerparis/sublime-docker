@@ -1,7 +1,7 @@
 {
     "target": "docker_clojure_build",
     "type": "RUN",
-    "selector": "source.lein",
+    "selector": "source.clojure",
     "docker_image": "clojure",
     "docker_image_tag": "latest",
     "docker_image_exe": "lein run",
