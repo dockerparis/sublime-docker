@@ -1,21 +1,21 @@
 {
-    "cmd": ["docker", "build", "$file_path"],
+    "shell_cmd": "docker build -t sublime-docker-`date +%N` $file_path",
     "selector": "source.dockerfile",
     "variants": [
-        { "name": "Docker build",
-            "cmd": ["docker", "build", "$file_path"]
+        { "name": "Dockerfile run in background",
+            "shell_cmd": "docker build -t sublime-docker-`date +%N` $file_path && (docker images -q | head -1) | xargs docker run -P -d | xargs docker port"
         },
-        { "name": "Docker create",
-            "cmd": ["docker", "create", "$file_path"]
+        { "name": "Dockerfile run in foreground non interactive",
+            "shell_cmd": "docker build -t sublime-docker-`date +%N` $file_path && (docker images -q | head -1) | xargs docker run -P -t --rm"
         },
-        { "name": "Docker run foreground non interactive",
-            "cmd": ["docker", "create", "$file_path"]
+        { "name": "Dockerfile deploy to GAE",
+            "shell_cmd": "echo not implemented yet"
         },
-        { "name": "Python run foreground interactive",
-            "cmd": ["docker", "create", "$file_path"]
+        { "name": "Dockerfile deploy to Deis",
+            "shell_cmd": "echo not implemented yet"
         },
-        { "name": "Docker run background",
-            "cmd": ["docker", "create", "$file_path"]
+        { "name": "Dockerfile deploy to OVH",
+            "shell_cmd": "echo not implemented yet"
         }
     ]
 }
